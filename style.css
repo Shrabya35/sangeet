@@ -1,0 +1,384 @@
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+     :root {
+        --side-color: #010001;
+        --mid-color: #1d1c1c;
+        --title-color: #fff;
+        --text-color: hsl(219, 8%, 75%);
+        --body-font: 'Lato', sans-serif;
+        --big-font: 2rem;
+        --mid-font: 1.5rem;
+        --small-font: 1rem;
+    }
+    
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+        transition: 0.5s ease;
+    }
+    
+    html::-webkit-scrollbar {
+        width: , 8rem;
+        border-radius: 30rem;
+    }
+    
+    html::-webkit-scrollbar-track {
+        background: var(--side-color);
+    }
+    
+    html::-webkit-scrollbar-thumb {
+        background: var(--mid-color);
+    }
+    
+    body {
+        font-family: var(--body-font);
+        color: var(--text-color);
+    }
+    
+    h1,
+    h2,
+    h3,
+    {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .left {
+        background: var(--side-color);
+    }
+    
+    .right {
+        background: var(--mid-color);
+    }
+    
+    .scroll-header {
+        background-color: var(--side-color);
+        box-shadow: 0 2px 4px hsla(0, 0%, 1%, 1);
+        height: 4.5rem;
+        transition: 1s;
+        animation-delay: .6s;
+    }
+    
+    @media screen and (min-width: 767px) {
+        .main {
+            display: flex;
+        }
+        .left {
+            position: fixed;
+            left: 0;
+            height: 100vh;
+            width: 20%;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.715);
+        }
+        .left .logo {
+            font-family: 'Fuzzy Bubbles', cursive;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--title-color);
+            cursor: pointer;
+        }
+        .ri-album-fill {
+            font-size: 2rem;
+        }
+        .nav-li {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: .8rem;
+            cursor: pointer;
+        }
+        .nav-li:hover {
+            color: var(--title-color);
+        }
+        .nav2 {
+            margin-top: 2.5rem;
+        }
+        .nav2 {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: .8rem;
+            cursor: pointer;
+        }
+        .nav2:hover {
+            color: var(--title-color);
+        }
+        .comment-li {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: .8rem;
+            cursor: pointer;
+            list-style: none;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--mid-color);
+        }
+        .comment-li:hover {
+            color: var(--title-color);
+        }
+        .right {
+            position: absolute;
+            right: 0;
+            height: auto;
+            width: 80%;
+            background-color: var(--mid-color);
+        }
+        .right nav {
+            top: 0;
+            position: sticky;
+            padding: .75rem;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 4rem;
+        }
+        .search-container {
+            display: flex;
+            gap: 1rem;
+            padding: .5rem;
+            width: 15rem;
+            height: 2.5rem;
+            background: white;
+            border-radius: 5rem;
+        }
+        .search-container input {
+            border: none;
+            outline: none;
+        }
+        .search-container i {
+            font-size: 1.5rem;
+            color: black;
+        }
+        .login-container {
+            display: flex;
+            gap: .25rem;
+            padding: .25rem;
+            width: 5rem;
+            height: 2rem;
+            background-color: white;
+            border-radius: 5rem;
+            color: black;
+        }
+        .login-container:hover {
+            cursor: pointer;
+        }
+        .login-container i {
+            font-size: 1.25rem;
+        }
+        .section {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .head {
+            display: flex;
+            justify-content: space-between;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
+        .side {
+            color: rgba(255, 255, 255, 0.733);
+            font-size: .75rem;
+        }
+        .side:hover,
+        .title:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .section-body {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+        .cont {
+            background: #121313c3;
+            width: 11rem;
+            height: 15rem;
+            padding: .75rem;
+            border-radius: 5px;
+        }
+        .cont:hover {
+            cursor: pointer;
+        }
+        .cont img {
+            border-radius: 5px;
+        }
+        .body-title {
+            padding-top: .25rem;
+            font-size: .9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.879);
+        }
+        .body-desc {
+            padding-top: .35rem;
+            font-size: .75rem;
+        }
+        .workout {
+            margin-bottom: 8rem;
+        }
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            height: 5rem;
+            width: 100%;
+            background-color: var(--mid-color);
+            border-top: 1px solid #121313;
+            box-shadow: 0 1px 4px hsla(0, 0%, 1%, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20%;
+            padding: 1rem;
+            z-index: 1;
+        }
+        .bottom-1 {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .bottom-1-img {
+            width: 4rem;
+        }
+        .bottom-1-text1 {
+            font-size: 1rem;
+        }
+        .bottom-1-text2 {
+            font-size: .75rem;
+            color: #a9a9a9;
+        }
+        .bottom-1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bottom-2a {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .bottom-2a i {
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: .5rem;
+        }
+        .bottom-2b {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .bar {
+            width: 15rem;
+            height: .75rem;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        .bar2 {
+            width: 8rem;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        .bottom i {
+            opacity: 1;
+        }
+        .bottom i:hover {
+            cursor: pointer;
+            opacity: .75;
+            transition: .5s ease;
+        }
+        .bottom3 {
+            display: flex;
+            gap: .75rem;
+        }
+        .toggle,
+        .cross {
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width: 855px) {
+        .right {
+            height: 100%;
+        }
+        .bottom {
+            display: flex;
+            gap: 13%;
+        }
+        .cont {
+            height: 10rem;
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        .left {
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+        .left nav {
+            padding: .5rem;
+        }
+        .left nav ul {
+            display: flex;
+        }
+        .ul1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 1.5rem;
+        }
+        .toggle {
+            font-size: 1.5rem;
+        }
+        .left nav ul li span {
+            display: none;
+        }
+        .cross {
+            display: none;
+        }
+        .main-nav {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-nav li {
+            font-size: 1.25rem;
+        }
+        .nav2,
+        .comment-li {
+            list-style: none;
+        }
+        .right {
+            width: 101%;
+            background-color: var(--mid-color);
+        }
+    }
