@@ -1,6 +1,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
      :root {
+        --theme-color: #20d253;
         --side-color: #010001;
         --mid-color: #1d1c1c;
         --title-color: #fff;
@@ -63,6 +64,7 @@
     
     .left {
         background: var(--side-color);
+        box-shadow: 0 1px 4px hsla(0, 0%, 1%, 1);
     }
     
     .right {
@@ -79,6 +81,21 @@
     
     .logo {
         font-family: 'Fuzzy Bubbles', cursive;
+        color: #000;
+    }
+    
+    .trending-body {
+        display: none;
+        transition: .5s ease;
+    }
+    
+    .podcast-body {
+        display: none;
+    }
+    
+    #like,
+    #mute {
+        color: var(--theme-color);
     }
     
     @media screen and (min-width: 767px) {
@@ -151,6 +168,7 @@
             justify-content: space-between;
             width: 100%;
             height: 4rem;
+            z-index: 2;
         }
         .search-container {
             display: flex;
@@ -178,9 +196,13 @@
             background-color: white;
             border-radius: 5rem;
             color: black;
+            text-transform: capitalize;
+            cursor: pointer;
         }
         .login-container:hover {
-            cursor: pointer;
+            background: var(--theme-color);
+            transition: .7s ease-in-out;
+            transform: rotate3d(0, .5, .3, .2rad);
         }
         .login-container i {
             font-size: 1.25rem;
@@ -219,9 +241,10 @@
             height: 15rem;
             padding: .75rem;
             border-radius: 5px;
+            cursor: pointer;
         }
         .cont:hover {
-            cursor: pointer;
+            opacity: .7;
         }
         .cont img {
             border-radius: 5px;
@@ -320,9 +343,16 @@
             display: flex;
             gap: .75rem;
         }
+        .bottom input:hover {
+            cursor: pointer;
+        }
         .toggle,
         .cross {
             display: none;
+        }
+        .trending,
+        .podcast {
+            padding-bottom: 15rem;
         }
     }
     
@@ -467,6 +497,9 @@
         .bottom-1-img {
             width: 4rem;
         }
+        .bottom-1-but i {
+            font-size: .75rem;
+        }
         .bottom-1-text1 {
             font-size: 1rem;
         }
@@ -500,5 +533,10 @@
         }
         .bottom-3 i {
             display: none;
+        }
+        .trending,
+        .podcast {
+            padding-top: 3rem;
+            padding-bottom: 4rem;
         }
     }
