@@ -18,7 +18,7 @@
             <nav class="nav1">
                 <ul class="ul1">
                     <li class="logo">
-                        <i class="ri-album-fill"></i>MUSIC
+                        <a href="" style="color: white;"><i class="ri-album-fill"></i>MUSIC</a>
                     </li>
                     <li class="toggle">
                         <i class="ri-menu-line"></i>
@@ -30,13 +30,13 @@
             </nav>
             <nav class="sec-nav">
                 <ul class="main-nav">
-                    <li class="nav-li">
+                    <li class="nav-li" onclick="home()">
                         <i class="fa-solid fa-house"></i> <span>  Home</span>
                     </li>
-                    <li class="nav-li">
+                    <li class="nav-li" onclick="trend()">
                         <i class="ri-fire-fill"></i> <span>Trending</span>
                     </li>
-                    <li class="nav-li">
+                    <li class="nav-li" onclick="podcast()">
                         <i class="ri-mic-fill"></i> <span>Podcast</span>
                     </li>
 
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="right-body">
+            <div class="right-body" id="right-body">
                 <div class="featured section">
                     <div class="featured-head head">
                         <p class="featured-title title">Featured</p>
@@ -290,6 +290,120 @@
                 </div>
 
             </div>
+            <div class="trending-body" id="trending-body">
+                <div class="trending section">
+                    <div class="trending-head head">
+                        <p class="trending-title title">Trending</p>
+                        <a href="" class="trending-side side">
+
+                        </a>
+                    </div>
+                    <div class="trending-body section-body">
+                        <div class="trending-cont cont">
+                            <img src="img/poster6.jpg" alt="">
+                            <p class="body-title">
+                                Hall Of Fame
+                            </p>
+                            <p class="body-desc">
+                                The Script
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <img src="img/poster7.png" alt="">
+                            <p class="body-title">
+                                Doja
+                            </p>
+                            <p class="body-desc">
+                                Central Cee
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <img src="img/poster8.jpeg" alt="">
+                            <p class="body-title">
+                                Save Your Tears
+                            </p>
+                            <p class="body-desc">
+                                The Weeknd , Ariana Grande
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <img src="img/poster9.png" alt="">
+                            <p class="body-title">
+                                Industry Baby
+                            </p>
+                            <p class="body-desc">
+                                Lil Nas X , Jack Harlow
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <img src="img/poster10.jpg" alt="">
+                            <p class="body-title">
+                                Sicko Mode
+                            </p>
+                            <p class="body-desc">
+                                Travis Scott , Drake
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="podcast-body" id="podcast-body">
+                <div class="podcast section">
+                    <div class="podcast-head head">
+                        <p class="podcast-title title">Podcast</p>
+                        <a href="" class="podcast-side side">
+
+                        </a>
+                    </div>
+                    <div class="podcast-body section-body">
+                        <div class="podcast-cont cont">
+                            <img src="img/podcast1.jpg" alt="">
+                            <p class="body-title">
+                                The Top G
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 92 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <img src="img/podcast2.png" alt="">
+                            <p class="body-title">
+                                Podcast
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 26 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <img src="img/podcast3.jpg" alt="">
+                            <p class="body-title">
+                                Talking With Dead
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 69 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <img src="img/podcast4.jpg" alt="">
+                            <p class="body-title">
+                                Kanye East
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 3 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <img src="img/podcast5.jpeg" alt="">
+                            <p class="body-title">
+                                This Is Elon Musk
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 212 min
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="bottom">
             <div class="bottom-1">
@@ -301,7 +415,9 @@
                     <p class="bottom-1-text2">The Weeknd</p>
                 </div>
                 <div class=" bottom-1-but ">
-                    <i class="ri-heart-line "></i>
+                    <span id="heart">
+                        <i class="ri-heart-line" id="unlike" onclick="unlike();"></i>
+                    </span>
                 </div>
             </div>
             <div class="bottom-2">
@@ -315,8 +431,10 @@
                 </div>
             </div>
             <div class="bottom-3">
-                <i class="ri-shuffle-line"></i>
-                <i class="ri-volume-up-line"></i>
+                <span id="volume">
+                <i class="ri-volume-up-line" id="unmute" onclick = "unmute();"></i>
+               </span>
+
                 <input type="range" min="1" max="100" value="1" class="bar2" id="bar2">
             </div>
         </div>
