@@ -24,7 +24,7 @@
     }
     
     html::-webkit-scrollbar {
-        width: , 8rem;
+        width: .8rem;
         border-radius: 30rem;
     }
     
@@ -84,6 +84,15 @@
         color: #000;
     }
     
+    .logo a {
+        color: white;
+    }
+    
+    .logo a:hover {
+        color: var(--theme-color);
+        transition: .4s ease;
+    }
+    
     .trending-body {
         display: none;
         transition: .5s ease;
@@ -106,7 +115,7 @@
             position: fixed;
             left: 0;
             height: 100vh;
-            width: 20%;
+            width: 18%;
             padding: 2rem;
             color: rgba(255, 255, 255, 0.715);
         }
@@ -116,6 +125,9 @@
             margin-bottom: 2rem;
             color: var(--title-color);
             cursor: pointer;
+        }
+        .left .logo:hover {
+            color: var(--theme-color);
         }
         .ri-album-fill {
             font-size: 2rem;
@@ -157,7 +169,7 @@
             position: absolute;
             right: 0;
             height: auto;
-            width: 80%;
+            width: 82%;
             background-color: var(--mid-color);
         }
         .right nav {
@@ -186,6 +198,10 @@
         .search-container i {
             font-size: 1.5rem;
             color: black;
+        }
+        .header-left {
+            display: flex;
+            gap: 1rem;
         }
         .login-container {
             display: flex;
@@ -245,6 +261,22 @@
         }
         .cont:hover {
             opacity: .7;
+        }
+        .song-link {
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+        .song-img:hover+.link-play {
+            transition: .5 ease;
+            opacity: 1;
+        }
+        .link-play {
+            font-size: 3rem;
+            position: absolute;
+            color: var(--theme-color);
+            opacity: 0;
+            pointer-events: none;
         }
         .cont img {
             border-radius: 5px;
@@ -460,6 +492,9 @@
         }
         .cont img {
             border-radius: 5px;
+        }
+        .link-play {
+            display: none;
         }
         .body-title {
             padding-top: .75rem;
