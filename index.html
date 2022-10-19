@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/10715cfae1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>MUSIC</title>
+    <title>Sangeet - web Music Player</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/img/icon.png">
 </head>
@@ -18,25 +18,23 @@
             <nav class="nav1">
                 <ul class="ul1">
                     <li class="logo">
-                        <a href=""><i class="ri-album-fill"></i>MUSIC</a>
+                        <a href=""><i class="ri-album-fill"></i>Sangeet</a>
                     </li>
                     <li class="toggle">
-                        <i class="ri-menu-line"></i>
+                        <i class="ri-menu-line" id="toggle"></i>
                     </li>
-                    <li class="cross">
-                        <i class="ri-close-fill"></i>
-                    </li>
+
                 </ul>
             </nav>
             <nav class="sec-nav">
                 <ul class="main-nav">
-                    <li class="nav-li" onclick="home()">
+                    <li class="nav-li" id="home-page" onclick="home()">
                         <i class="fa-solid fa-house"></i> <span>  Home</span>
                     </li>
-                    <li class="nav-li" onclick="trend()">
+                    <li class="nav-li" id="trending-page" onclick="trend()">
                         <i class="ri-fire-fill"></i> <span>Trending</span>
                     </li>
-                    <li class="nav-li" onclick="podcast()">
+                    <li class="nav-li" id="podcast-page" onclick="podcast()">
                         <i class="ri-mic-fill"></i> <span>Podcast</span>
                     </li>
 
@@ -54,21 +52,22 @@
 
         <div class="right">
             <nav id="header">
+                <i class="ri-close-fill" id="close"></i>
                 <div class="search">
-                    <div class="search-container">
+                    <div class="search-container" id="nav-link">
                         <i class="ri-search-line"></i>
                         <input type="text" placeholder="What do you want to listen ?">
                     </div>
                 </div>
                 <div class="header-left">
                     <div class="login">
-                        <div class="login-container">
+                        <div class="login-container" id="nav-link">
                             <p>Upgrade</p>
 
                         </div>
                     </div>
-                    <div class="login">
-                        <div class="login-container">
+                    <div class="login" id="login">
+                        <div class="login-container" id="nav-link">
                             <i class="ri-user-3-line"></i>
                             <p>Login</p>
                         </div>
@@ -574,6 +573,16 @@
                 </div>
             </div>
         </div>
+        <dialog class="login-modal modal" id="login-modal">
+            <form class="modal-form">
+                <h1 class="logo">Sangeet</h1>
+                <p>To continue, log in to Sangeet</p>
+                <input type="text" name="" placeholder="Username">
+                <input type="password" name="" placeholder="Password">
+                <input type="submit" name="" value="Login" id="modal-login">
+                <p>Don't have an account ? <span>register</span></p>
+            </form>
+        </dialog>
         <div class="bottom">
             <div class="bottom-1">
                 <div class="bottom-1-img">
@@ -604,9 +613,10 @@
                 <i class="ri-volume-up-line" id="unmute" onclick = "unmute();"></i>
                </span>
 
-                <input type="range" min="1" max="100" value="1" class="bar2" id="bar2">
+                <input type="range" min="1" max="100" value="100" class="bar2" id="bar2">
             </div>
         </div>
+
     </div>
 
 
