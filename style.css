@@ -107,6 +107,94 @@
         color: var(--theme-color);
     }
     
+    #home-page {
+        color: var(--theme-color);
+    }
+    
+    .modal {
+        background: var(--body-color);
+        margin: auto;
+        box-shadow: 0 2px 4px hsla(0, 0%, 1%, 1);
+        border: solid var(--first-color);
+        border-radius: 1.3rem;
+    }
+    
+    .modal::backdrop {
+        background-color: hsla(0, 0%, 100%, .1);
+        backdrop-filter: blur(15px);
+    }
+    
+    .modal-form {
+        padding: 40px;
+        background: var(--mid-color);
+        text-align: center;
+        border-radius: .5rem;
+        box-shadow: 0 0 4px hsla(0, 0%, 1%, 1);
+    }
+    
+    .modal-form h1 {
+        color: white;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--side-color);
+    }
+    
+    .modal-form p {
+        color: var(--title-color);
+        font-weight: 800;
+        font-size: .95rem;
+        padding-top: 1rem;
+    }
+    
+    .modal-form p span {
+        color: var(--theme-color);
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+    
+    .modal-form input[type="text"],
+    .modal-form input[type="password"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid var(--theme-color);
+        padding: 14px 10px;
+        width: 18rem;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+    
+    .modal-form input[type="text"]:focus,
+    .modal-form input[type="password"]:focus {
+        width: 17.5rem;
+        border-color: var(--theme-color);
+        outline: 1px solid var(--theme-color);
+    }
+    
+    .modal-form input[type="submit"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid var(--theme-color);
+        padding: 14px 40px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+    
+    .modal-form input[type="submit"]:hover {
+        background: var(--theme-color);
+        transition: .7s ease-in-out;
+        transform: rotate3d(0, .5, .3, .2rad);
+    }
+    
     @media screen and (min-width: 767px) {
         .main {
             display: flex;
@@ -386,6 +474,9 @@
         .podcast {
             padding-bottom: 15rem;
         }
+        #close {
+            display: none;
+        }
     }
     
     @media screen and (max-width: 855px) {
@@ -453,7 +544,67 @@
             box-sizing: border-box;
         }
         #header {
-            display: none;
+            position: fixed;
+            background-color: var(--side-color);
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            transition: .3s;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 3rem;
+            padding-top: 3rem;
+            padding: 1rem;
+        }
+        #close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            color: white;
+        }
+        .login {
+            padding-top: 1rem;
+        }
+        .login-container {
+            display: flex;
+            gap: .25rem;
+            padding: .25rem;
+            width: 5rem;
+            height: 2rem;
+            background-color: white;
+            border-radius: 5rem;
+            color: black;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        .login-container:hover {
+            background: var(--theme-color);
+            transition: .7s ease-in-out;
+            transform: rotate3d(0, .5, .3, .2rad);
+        }
+        .login-container i {
+            font-size: 1.25rem;
+        }
+        .search-container {
+            display: flex;
+            gap: 1rem;
+            padding: .5rem;
+            width: 15rem;
+            height: 2.5rem;
+            background: white;
+            border-radius: 5rem;
+        }
+        .search-container input {
+            border: none;
+            outline: none;
+        }
+        .search-container i {
+            font-size: 1.5rem;
+            color: black;
         }
         .right-body {
             margin-top: 5rem;
