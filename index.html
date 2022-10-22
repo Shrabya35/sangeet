@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/10715cfae1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>Sangeet - web Music Player</title>
+    <title>Sangeet - Web Music Player</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/img/icon.png">
 </head>
@@ -580,7 +580,20 @@
                 <input type="text" name="" placeholder="Username">
                 <input type="password" name="" placeholder="Password">
                 <input type="submit" name="" value="Login" id="modal-login">
-                <p>Don't have an account ? <span>register</span></p>
+                <p>Don't have an account ? <span id="log-sign">register</span></p>
+            </form>
+        </dialog>
+        <dialog class="signup-modal modal" id="signup-modal">
+            <form class="modal-form" method="post" action="">
+                <h1 class="logo">Sangeet</h1>
+                <p>To Register, Signup to Sangeet</p>
+
+                <input type="text" name="username" placeholder="Username" Required>
+                <input type="email" name="email" placeholder="email" Required>
+                <input type="password" name="password" placeholder="Password" Required>
+                <input type="password" name="password2" placeholder="Confirm Your Password" Required>
+                <input type="submit" name="" value="Signup" id="modal-signup">
+                <p>Already have an account ? <span id="sign-log">Login</span></p>
             </form>
         </dialog>
         <div class="bottom">
