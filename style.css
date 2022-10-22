@@ -152,7 +152,8 @@
     }
     
     .modal-form input[type="text"],
-    .modal-form input[type="password"] {
+    .modal-form input[type="password"],
+    .modal-form input[type="email"] {
         border: 0;
         background: none;
         display: block;
@@ -168,7 +169,8 @@
     }
     
     .modal-form input[type="text"]:focus,
-    .modal-form input[type="password"]:focus {
+    .modal-form input[type="password"]:focus,
+    .modal-form input[type="email"]:focus {
         width: 17.5rem;
         border-color: var(--theme-color);
         outline: 1px solid var(--theme-color);
