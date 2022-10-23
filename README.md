@@ -1,5 +1,5 @@
 # spotify-clone
--> A simple clone of SPotify.
+-> A simple clone of Spotify.
 
 Link --> https://shrabya35.github.io/spotify-clone
 
