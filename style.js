@@ -81,13 +81,13 @@ signLog.addEventListener('click', () => {
 })
 
 //functional
-let song = new Audio('mp3/1.mp3');
+let song = new Audio('mp3/2.mp3');
 let songIndex = 0;
 let play = document.getElementById('play');
 let bar = document.getElementById('bar');
 let barTwo = document.getElementById('bar2');
 let songs = [
-    { songName: " Never Gonna Give You Up", filePath: "mp3/1.mp3", cover: "img/poster18.jpeg" }
+    { songName: " Never Gonna Give You Up", filePath: "mp3/2.mp3", cover: "img/poster18.jpeg" }
 ]
 
 //play song
