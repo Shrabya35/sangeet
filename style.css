@@ -608,6 +608,7 @@
             width: 5rem;
             height: 2rem;
             background-color: transparent;
+            border-radius: 5rem;
             border: .75px solid rgba(255, 255, 255, 0.775);
             color: white;
             text-transform: capitalize;
@@ -620,6 +621,7 @@
         .login-container:hover {
             transition: .3s ease-out;
             outline: 1.5px solid white;
+            border-radius:5rem;
             box-shadow: 2px 7px 5px #888888;
         }
         .login-container i {
