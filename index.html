@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/10715cfae1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>MUSIC</title>
+    <title>Sangeet - Web Music Player</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/img/icon.png">
 </head>
@@ -18,25 +18,23 @@
             <nav class="nav1">
                 <ul class="ul1">
                     <li class="logo">
-                        <i class="ri-album-fill"></i>MUSIC
+                        <a href=""><i class="ri-album-fill"></i>Sangeet</a>
                     </li>
                     <li class="toggle">
-                        <i class="ri-menu-line"></i>
+                        <i class="ri-menu-line" id="toggle"></i>
                     </li>
-                    <li class="cross">
-                        <i class="ri-close-fill"></i>
-                    </li>
+
                 </ul>
             </nav>
             <nav class="sec-nav">
                 <ul class="main-nav">
-                    <li class="nav-li">
+                    <li class="nav-li" id="home-page" onclick="home()">
                         <i class="fa-solid fa-house"></i> <span>  Home</span>
                     </li>
-                    <li class="nav-li">
+                    <li class="nav-li" id="trending-page" onclick="trend()">
                         <i class="ri-fire-fill"></i> <span>Trending</span>
                     </li>
-                    <li class="nav-li">
+                    <li class="nav-li" id="podcast-page" onclick="podcast()">
                         <i class="ri-mic-fill"></i> <span>Podcast</span>
                     </li>
 
@@ -54,20 +52,30 @@
 
         <div class="right">
             <nav id="header">
+                <i class="ri-close-fill" id="close"></i>
                 <div class="search">
-                    <div class="search-container">
+                    <div class="search-container" id="nav-link">
                         <i class="ri-search-line"></i>
                         <input type="text" placeholder="What do you want to listen ?">
                     </div>
                 </div>
-                <div class="login">
-                    <div class="login-container">
-                        <i class="ri-user-3-line"></i>
-                        <p>Login</p>
+                <div class="header-left">
+                    <div class="login">
+                        <div class="login-container" id="nav-link">
+                            <p>Upgrade</p>
+
+                        </div>
+                    </div>
+                    <div class="login" id="login">
+                        <div class="login-container" id="nav-link">
+                            <i class="ri-user-3-line"></i>
+                            <p>Login</p>
+                        </div>
                     </div>
                 </div>
+
             </nav>
-            <div class="right-body">
+            <div class="right-body" id="right-body">
                 <div class="featured section">
                     <div class="featured-head head">
                         <p class="featured-title title">Featured</p>
@@ -77,25 +85,10 @@
                     </div>
                     <div class="featured-body section-body">
                         <div class="featured-cont cont">
-                            <img src="img/poster1.jpg" alt="">
-                            <p class="body-title">
-                                The Hills
-                            </p>
-                            <p class="body-desc">
-                                The Weeknd
-                            </p>
-                        </div>
-                        <div class="featured-cont cont">
-                            <img src="img/poster2.jpg" alt="">
-                            <p class="body-title">
-                                Yestei Nai Hola
-                            </p>
-                            <p class="body-desc">
-                                Phosphenes
-                            </p>
-                        </div>
-                        <div class="featured-cont cont">
-                            <img src="img/poster18.jpeg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster18.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Never Gonna Give You Up
                             </p>
@@ -104,76 +97,191 @@
                             </p>
                         </div>
                         <div class="featured-cont cont">
-                            <img src="img/poster4.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster22.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Timi Ra, Ma
+                                No suprise
                             </p>
                             <p class="body-desc">
-                                Bartika Eam Rai
+                                Radiohead
                             </p>
                         </div>
                         <div class="featured-cont cont">
-                            <img src="img/poster5.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster23.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                It's You
+                                Sweater Weather
                             </p>
                             <p class="body-desc">
-                                Ali Gatie
+                                The Neighbourhood
+                            </p>
+                        </div>
+                        <div class="featured-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster24.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                After Dark
+                            </p>
+                            <p class="body-desc">
+                                Mr.Kitty
+                            </p>
+                        </div>
+                        <div class="featured-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster20.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Slow dancing in the dark
+                            </p>
+                            <p class="body-desc">
+                                Joji
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="new section">
                     <div class="new-head head">
-                        <p class="new-title title">Fresh New Music</p>
+                        <p class="new-title title">Songs You May Like</p>
                         <a href="" class="new-side side">
                             <p>SEE ALL</p>
                         </a>
                     </div>
                     <div class="new-body section-body">
                         <div class="new-cont cont">
-                            <img src="img/poster16.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster16.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Loser
+                                Chamber of Reflection
                             </p>
                             <p class="body-desc">
-                                Charlie Puth
+                                Mac DeMarco
                             </p>
                         </div>
                         <div class="new-cont cont">
-                            <img src="img/poster17.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster17.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Somebody That I Used to Know
+                                Viva La Vida
                             </p>
                             <p class="body-desc">
-                                Gotye
+                                Coldplay
                             </p>
                         </div>
                         <div class="new-cont cont">
-                            <img src="img/poster3.png" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster3.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Unholy
+                                Notion
                             </p>
                             <p class="body-desc">
-                                Sam Smith , Kim Petras
+                                The Rare Occasions
                             </p>
                         </div>
                         <div class="new-cont cont">
-                            <img src="img/poster19.jpeg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster19.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Bad Habit
+                                Space song
                             </p>
                             <p class="body-desc">
-                                Steve Lacy
+                                Beach House
                             </p>
                         </div>
                         <div class="new-cont cont">
-                            <img src="img/poster20.png" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster5.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Late Night Talking
+                                My way
                             </p>
                             <p class="body-desc">
-                                Harry Styles
+                                Frank Sinatra
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nepali section">
+                    <div class="nepali-head head">
+                        <p class="nepali-title title">Regional</p>
+                        <a href="" class="nepali-side side">
+                            <p>SEE ALL</p>
+                        </a>
+                    </div>
+                    <div class="nepali-body section-body">
+                        <div class="nepali-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster2.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Yestei Nai Hola
+                            </p>
+                            <p class="body-desc">
+                                Phosphenes
+                            </p>
+                        </div>
+                        <div class="nepali-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster4.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Ranga
+                            </p>
+                            <p class="body-desc">
+                                Raockheads
+                            </p>
+                        </div>
+                        <div class="nepali-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster21.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Gauthali
+                            </p>
+                            <p class="body-desc">
+                                Pahenlo Batti Muni
+                            </p>
+                        </div>
+                        <div class="nepali-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster26.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Maili
+                            </p>
+                            <p class="body-desc">
+                                Ankita Pun
+                            </p>
+                        </div>
+                        <div class="nepali-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster25.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Birsiney Hau Ki
+                            </p>
+                            <p class="body-desc">
+                                The Elements
                             </p>
                         </div>
                     </div>
@@ -187,7 +295,10 @@
                     </div>
                     <div class="sport-body section-body">
                         <div class="sport-cont cont">
-                            <img src="img/poster11.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster11.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Wavin FLag
                             </p>
@@ -196,7 +307,10 @@
                             </p>
                         </div>
                         <div class="sport-cont cont">
-                            <img src="img/poster12.jpeg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster12.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Magic In The Air
                             </p>
@@ -205,7 +319,10 @@
                             </p>
                         </div>
                         <div class="sport-cont cont">
-                            <img src="img/poster13.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster13.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Waka Waka
                             </p>
@@ -214,21 +331,27 @@
                             </p>
                         </div>
                         <div class="sport-cont cont">
-                            <img src="img/poster14.png" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster14.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                We Are One
+                                Arhbo
                             </p>
                             <p class="body-desc">
-                                Pitbull
+                                Ozuna
                             </p>
                         </div>
                         <div class="sport-cont cont">
-                            <img src="img/poster15.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster14.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
-                                Live it up
+                                We are one
                             </p>
                             <p class="body-desc">
-                                Nicky Jam
+                                Pitbull
                             </p>
                         </div>
                     </div>
@@ -242,7 +365,10 @@
                     </div>
                     <div class="workout-body section-body">
                         <div class="workout-cont cont">
-                            <img src="img/poster6.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster6.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Hall Of Fame
                             </p>
@@ -251,7 +377,10 @@
                             </p>
                         </div>
                         <div class="workout-cont cont">
-                            <img src="img/poster7.png" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster7.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Doja
                             </p>
@@ -260,7 +389,10 @@
                             </p>
                         </div>
                         <div class="workout-cont cont">
-                            <img src="img/poster8.jpeg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster8.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Save Your Tears
                             </p>
@@ -269,7 +401,10 @@
                             </p>
                         </div>
                         <div class="workout-cont cont">
-                            <img src="img/poster9.png" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster9.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Industry Baby
                             </p>
@@ -278,7 +413,10 @@
                             </p>
                         </div>
                         <div class="workout-cont cont">
-                            <img src="img/poster10.jpg" alt="">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster10.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
                             <p class="body-title">
                                 Sicko Mode
                             </p>
@@ -290,36 +428,208 @@
                 </div>
 
             </div>
+            <div class="trending-body" id="trending-body">
+                <div class="trending section">
+                    <div class="trending-head head">
+                        <p class="trending-title title">Trending</p>
+                        <a href="" class="trending-side side">
+
+                        </a>
+                    </div>
+                    <div class="trending-body section-body">
+                        <div class="trending-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster1.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                The Hills
+                            </p>
+                            <p class="body-desc">
+                                The Weeknd
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster7.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Doja
+                            </p>
+                            <p class="body-desc">
+                                Central Cee
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster8.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Save Your Tears
+                            </p>
+                            <p class="body-desc">
+                                The Weeknd , Ariana Grande
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster9.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Industry Baby
+                            </p>
+                            <p class="body-desc">
+                                Lil Nas X , Jack Harlow
+                            </p>
+                        </div>
+                        <div class="trending-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/poster10.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Sicko Mode
+                            </p>
+                            <p class="body-desc">
+                                Travis Scott , Drake
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="podcast-body" id="podcast-body">
+                <div class="podcast section">
+                    <div class="podcast-head head">
+                        <p class="podcast-title title">Podcast</p>
+                        <a href="" class="podcast-side side">
+
+                        </a>
+                    </div>
+                    <div class="podcast-body section-body">
+                        <div class="podcast-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/podcast1.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                The Bottom G
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 92 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/podcast2.png" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Podcast
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 26 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/podcast3.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Talking With Dead
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 69 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/podcast4.jpg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                Kanye East
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 3 min
+                            </p>
+                        </div>
+                        <div class="podcast-cont cont">
+                            <a href="#" class="song-link">
+                                <img class="song-img" src="img/podcast5.jpeg" alt="">
+                                <i class="ri-play-circle-fill link-play"></i>
+                            </a>
+                            <p class="body-title">
+                                This Is Elon Musk
+                            </p>
+                            <p class="body-desc">
+                                &#9830; 212 min
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <dialog class="login-modal modal" id="login-modal">
+            <form class="modal-form">
+                <h1 class="logo">Sangeet</h1>
+                <p>To continue, log in to Sangeet</p>
+                <input type="text" name="" placeholder="Username">
+                <input type="password" name="" placeholder="Password">
+                <input type="submit" name="" value="Login" id="modal-login">
+                <p>Don't have an account ? <span id="log-sign">register</span></p>
+            </form>
+        </dialog>
+        <dialog class="signup-modal modal" id="signup-modal">
+            <form class="modal-form" method="post" action="">
+                <h1 class="logo">Sangeet</h1>
+                <p>To Register, Signup to Sangeet</p>
+
+                <input type="text" name="username" placeholder="Username" Required>
+                <input type="email" name="email" placeholder="email" Required>
+                <input type="password" name="password" placeholder="Password" Required>
+                <input type="password" name="password2" placeholder="Confirm Your Password" Required>
+                <input type="submit" name="" value="Signup" id="modal-signup">
+                <p>Already have an account ? <span id="sign-log">Login</span></p>
+            </form>
+        </dialog>
         <div class="bottom">
             <div class="bottom-1">
                 <div class="bottom-1-img">
                     <img src="img/icon.png" alt="">
                 </div>
                 <div class="bottom-1-text">
-                    <p class="bottom-1-text1">The Hills</p>
-                    <p class="bottom-1-text2">The Weeknd</p>
+                    <p class="bottom-1-text1"> Never Gonna Give You Up</p>
+                    <p class="bottom-1-text2">Rick Astley</p>
                 </div>
                 <div class=" bottom-1-but ">
-                    <i class="ri-heart-line "></i>
+                    <span id="heart">
+                        <i class="ri-heart-line" id="unlike" onclick="unlike();"></i>
+                    </span>
                 </div>
             </div>
             <div class="bottom-2">
                 <div class="bottom-2a">
                     <i class="ri-skip-back-fill"></i>
-                    <i class="ri-play-circle-fill"></i>
+                    <i class="ri-play-circle-fill" id="play"></i>
                     <i class="ri-skip-forward-fill"></i>
                 </div>
                 <div class="bottom-2b">
                     <input type="range" min="1" max="100" value="1" class="bar" id="bar">
                 </div>
             </div>
-            <div class="bottom-3 ">
-                <i class="ri-shuffle-line"></i>
-                <i class="ri-volume-up-line"></i>
-                <input type="range" min="1" max="100" value="1" class="bar2" id="bar2">
+            <div class="bottom-3">
+                <span id="volume">
+                <i class="ri-volume-up-line" id="unmute" onclick = "unmute();"></i>
+               </span>
+
+                <input type="range" min="1" max="100" value="100" class="bar2" id="bar2">
             </div>
         </div>
+
     </div>
 
 
